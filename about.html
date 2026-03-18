@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <title>О нас</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <!-- Верхняя колонна -->
+    <header class="top-bar">
+        <div class="logo">
+            <h1>AVENUE FLOWERS</h1>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li><a href="main.html">Главная</a></li>
+                <li><a href="about.html">О Нас</a></li>
+                <li><a href="composition.html">Композиции</a></li>
+                <li><a href="offers.html">Акции</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <a href="#account"><img src="account.png" alt="Аккаунт"></a>
+            <a href="#cart"><img src="store.png" alt="Корзина"></a>
+            <a href="#favorites"><img src="fav.png" alt="Избранные"></a>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="main.html" class="breadcrumb-link">ГЛАВНАЯ</a>
+        <span class="breadcrumb-separator">></span>
+        <span class="breadcrumb-current">О Нас</span>
+    </div>
+
+    <!-- Слайд-шоу -->
+    <section class="slideshow">
+        <div class="slides fade">
+            <img src="slide1.jpg" alt="Цветок 1">
+        </div>
+        <div class="slides fade">
+            <img src="slide2.jpg" alt="Цветок 2">
+        </div>
+
+        <!-- Кнопки управления -->
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+
+        <!-- Индикаторы -->
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </section>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            const slides = document.querySelectorAll('.slides');
+            const dots = document.querySelectorAll('.dot');
+
+            if (n > slides.length) slideIndex = 1;
+            if (n < 1) slideIndex = slides.length;
+
+            slides.forEach(slide => slide.style.display = 'none');
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slides[slideIndex - 1].style.display = 'block';
+            dots[slideIndex - 1].classList.add('active');
+        }
+
+        // Автоматическая смена слайдов каждые 5 секунд
+        setInterval(() => changeSlide(1), 5000);
+    </script>
+    <section class="line-with-title" style="background-image: url('back.png'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+        <div class="line"></div>
+        <h2 class="section-title">Особенности пространства</h2>
+    </section>
+    <section class="main-content">
+        <p>
+            Мы расположены в самом сердце делового центра Алматы, всего в нескольких шагах от площади Республики, городской администрации, отелей Intercontinental и Holiday Inn, бизнес-центра Нурлы Тау, офиса Kaspi, ТРЦ Forum, жилых комплексов Ortau, «Керемет», «Овация», Central Avenue, AFD Plaza и других. Мы работаем без выходных с 07:00 до 01:00.
+        </p>
+        <p>
+            У нас есть места для парковки, что является актуальным преимуществом в городе. Наши клиенты могут приобрести цветы, мягкие игрушки, торты, сладости, шары, комнатные растения и оригинальные подарки - все, что нужно для создания стильного и оригинального подарка.
+        </p>
+        <p>
+            У нас также есть уютное кафе, где вы можете насладиться чашечкой кофе, встретиться с друзьями и даже снять креативные ролики для социальных сетей на фоне красивых декораций внутри нашей цветочной галереи Flower Avenue. Мы гордимся разнообразием нашего ассортимента цветов - от классических роз разных сортов до экзотических видов, представленных многочисленными брендами наших партнеров. Мы предоставляем высокий уровень сервиса и культуры обслуживания, что обеспечивает целостность и единство наших партнеров, представленных в Flower Avenue.
+        </p>
+    </section>
+    <section class="line-with-title" style="background-image: url('back.png'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+        <div class="line"></div>
+        <h2 class="section-title" >Но это еще не все!</h2>
+    </section>
+    <section class="additional-content">
+        <p>
+            Галерея цветочных салонов Flower Avenue – это уникальное место, где вы сможете насладиться разнообразием цветочных композиций, подарков, и комнатных растений для жителей и гостей города Алматы.
+        </p>
+        <p>Мы реализуем свежесрезанные цветы из разных стран мира, включая:</p>
+        <ul>
+            <li>Эквадор;</li>
+            <li>Италию;</li>
+            <li>Голландию;</li>
+            <li>Кению;</li>
+            <li>Колумбию;</li>
+            <li>Израиль;</li>
+            <li>Францию;</li>
+        </ul>
+        <p>
+            Вас порадует современная курьерская служба – специализированный сервис, гарантирующий своевременную доставку и учитывающий все требования клиентов. У нас вы найдете редкие цветы по доступным ценам в Алматы. Закажите букет онлайн или по номеру телефона: <a href="tel:+77008009191">+7 (700) 800-91-91</a>.
+        </p>
+    </section>
+    <section class="instagram-column">
+        <div class="instagram-container">
+            <img src="instagram.png" alt="Instagram" class="instagram-icon">
+            <p class="instagram-text">Самые свежие букеты и эксклюзивные предложения!</p>
+            <a href="https://www.instagram.com/avenueflowerkz/" class="subscribe-btn">Подписаться</a>
+        </div>
+    </section>
+    <section class="final-footer">
+        <div class="final-footer-container">
+            <div class="left-info">
+                <p>© 2014 — 2024 | AVENUE | Все права защищены</p>
+                <p>Публичная оферта Талон ИП Лицензия Политика конфиденциальности</p>
+                <p>
+                    ЛЕВЧЕНКО ОЛЬГА НИКОЛАЕВНА<br>
+                    ИИН: 690502402093<br>
+                    050010 г. Алматы, Медеуский район, ул. Радлова, д. 50/40 Алматы, Алматинская область 050010 Казахстан<br>
+                    KZ876018861000218861 ДБ АО «Народный Банк Казахстана»<br>
+                    БИК HSBKKZKX<br>
+                    Номер телефона: +77770313905, 8 (777) 031 3905<br>
+                    <a href="mailto:mail@pro-buket.kz" style="color: #FFF; text-decoration: underline;">mail@pro-buket.kz</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
+

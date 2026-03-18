@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Главная - AVENUE</title>
+  
+  <!-- Подключение CSS -->
+  <link rel="stylesheet" href="main.css">
+  
+  <!-- Подключение шрифтов Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Подключение JS -->
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <!-- Верхняя колонна -->
+  <header class="top-bar">
+    <div class="logo">
+      <h1>AVENUE FLOWERS</h1>
+    </div>
+    <nav class="navigation">
+      <ul>
+        <li><a href="main.html">Главная</a></li>
+        <li><a href="about.html">О Нас</a></li>
+        <li><a href="composition.html">Композиции</a></li>
+        <li><a href="offers.html">Акции</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="icons">
+      <a href="account.html"><img src="account.png" alt="Аккаунт"></a>
+      <a href="#"><img src="store.png" alt="Корзина"></a>
+      <a href="#"><img src="fav.png" alt="Избранные"></a>
+    </div>
+  </header>
+
+  <!-- Слайд-шоу -->
+  <div class="slider-container">
+    <button class="slider-button left" onclick="prevSlide()">&#10094;</button>
+    <div class="slider">
+      <img src="slide1.jpg" alt="Слайд 1" class="slide">
+      <img src="slide2.jpg" alt="Слайд 2" class="slide" style="display: none;">
+    </div>
+    <button class="slider-button right" onclick="nextSlide()">&#10095;</button>
+  </div>
+
+  <!-- Подтема "Наши бестселлеры" -->
+  <section class="bestsellers">
+    <h2 class="bestsellers-heading">Наши бестселлеры</h2>
+    <div class="bestsellers-grid">
+      <!-- Карточка 1 -->
+      <div class="bestseller-card">
+        <img src="bestseller1.png" alt="Розовый Пион">
+        <h3>Розовый Пион</h3>
+        <p class="description">
+          Этот пион с насыщенными розовыми лепестками создаёт атмосферу утончённости и романтики.
+        </p>
+        <p class="price">Цена: 10000 KZT</p>
+        <div class="card-actions">
+          <button class="order-button">Заказать</button>
+          <div class="action-icons">
+            <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+            <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Карточка 2 -->
+      <div class="bestseller-card">
+        <img src="bestseller2.png" alt="Красная Роза">
+        <h3>Красная Роза</h3>
+        <p class="description">
+          Символ любви и страсти, эта красная роза не оставит равнодушным ни одного ценителя цветов.
+        </p>
+        <p class="price">Цена: 8000 KZT</p>
+        <div class="card-actions">
+          <button class="order-button">Заказать</button>
+          <div class="action-icons">
+            <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+            <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Карточка 3 -->
+      <div class="bestseller-card">
+        <img src="bestseller3.png" alt="Лавандовый букет">
+        <h3>Лавандовый букет</h3>
+        <p class="description">
+          Букет с тонким ароматом лаванды идеально подходит для создания уютной атмосферы.
+        </p>
+        <p class="price">Цена: 7000 KZT</p>
+        <div class="card-actions">
+          <button class="order-button">Заказать</button>
+          <div class="action-icons">
+            <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+            <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Карточка 4 -->
+      <div class="bestseller-card">
+        <img src="bestseller4.png" alt="Жёлтая Орхидея">
+        <h3>Жёлтая Орхидея</h3>
+        <p class="description">
+          Элегантная орхидея с яркими жёлтыми лепестками принесет радость и тепло в любой дом.
+        </p>
+        <p class="price">Цена: 12000 KZT</p>
+        <div class="card-actions">
+          <button class="order-button">Заказать</button>
+          <div class="action-icons">
+            <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+            <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Карточка 5 -->
+      <div class="bestseller-card">
+        <img src="bestseller5.png" alt="Тюльпаны">
+        <h3>Тюльпаны</h3>
+        <p class="description">
+          Весенние тюльпаны с яркими цветами — это символ возрождения и нового начала.
+        </p>
+        <p class="price">Цена: 9000 KZT</p>
+        <div class="card-actions">
+          <button class="order-button">Заказать</button>
+          <div class="action-icons">
+            <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+            <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Карточка 6 -->
+      <div class="bestseller-card">
+        <img src="bestseller6.png" alt="Герберы">
+        <h3>Герберы</h3>
+        <p class="description">
+          Яркие и разноцветные герберы — это идеальные цветы для тех, кто ищет яркость и энергичность.
+        </p>
+        <p class="price">Цена: 7500 KZT</p>
+        <div class="card-actions">
+          <button class="order-button">Заказать</button>
+          <div class="action-icons">
+            <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+            <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Карточка 7 -->
+      <div class="bestseller-card">
+        <img src="bestseller7.png" alt="Белая Лилия">
+        <h3>Белая Лилия</h3>
+        <p class="description">
+          Белые лилии — символ чистоты и совершенства, они станут украшением любого торжества.
+        </p>
+        <p class="price">Цена: 10000 KZT</p>
+        <div class="card-actions">
+          <button class="order-button">Заказать</button>
+          <div class="action-icons">
+            <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+            <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Карточка 8 -->
+      <div class="bestseller-card">
+        <img src="bestseller8.png" alt="Пионы и Розы">
+        <h3>Пионы и Розы</h3>
+        <p class="description">
+          Пионы и розы в одном букете создают идеальное сочетание нежности и красоты.
+        </p>
+        <p class="price">Цена: 11000 KZT</p>
+        <div class="card-actions">
+          <button class="order-button">Заказать</button>
+          <div class="action-icons">
+            <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+            <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Карточка 9 -->
+      <div class="bestseller-card">
+        <img src="bestseller9.png" alt="Фрезия">
+        <h3>Фрезия</h3>
+        <p class="description">
+          Ароматные фрезии с яркими, элегантными цветами прекрасно подойдут для любого повода.
+        </p>
+        <p class="price">Цена: 9500 KZT</p>
+        <div class="card-actions">
+          <button class="order-button">Заказать</button>
+          <div class="action-icons">
+            <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+            <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="services">
+    <div class="services-container">
+        <h2 class="services-heading">Наши Услуги</h2>
+        <div class="services-grid">
+            <!-- Праздничный декор -->
+            <div class="service-card">
+                <img src="decor.PNG" alt="Праздничный декор" class="service-image">
+                <h3 class="service-title">Праздничный декор</h3>
+                <p class="service-description">
+                    ● Мы сотрудничаем напрямую с Эквадорскими, Колумбийскими, Кенийскими и Голландскими плантациями<br>
+                    ● Поставки цветов фактически каждый день, семь дней в неделю<br>
+                    ● Мы отбираем исключительно лучшие цветы для Вашего букета, которым Вы дарите не только хорошее настроение, но и без слов говорите о своих чувствах.
+                </p>
+            </div>
+
+            <!-- Оформление событий -->
+            <div class="service-card">
+                <img src="decor1.PNG" alt="Оформление событий" class="service-image">
+                <h3 class="service-title">Оформление событий</h3>
+                <p class="service-description">
+                    ● Мы предлагаем авторские решения и индивидуальный подход к каждому заказу<br>
+                    ● Мы очень любим свое дело и ценим эмоции клиентов, а потому наши заказчики получают оригинальные букеты, собранные с душой, украшенные стильной упаковкой и лентой<br>
+                </p>
+            </div>
+
+            <!-- Цветы для корпоративных поздравлений сотрудников -->
+            <div class="service-card">
+                <img src="decor2.png" alt="Цветы для корпоративных поздравлений сотрудников" class="service-image">
+                <h3 class="service-title">Цветы для корпоративных поздравлений сотрудников</h3>
+                <p class="service-description">
+                    ● Перед доставкой букета менеджер отправляет фото для согласования в мессенджеры, соц. сети или на email<br>
+                    ● К любому букету в подарок фирменная открытка Araik Galstyan Floral Design House с вашим текстом<br>
+                    ● Только после вашего согласования, букет передается курьеру для доставки по указанному адресу.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="form-section">
+  <div class="form-container">
+      <div class="form-left">
+          <h2>Не нашли подходящий букет?</h2>
+          <form>
+              <input type="text" name="name" placeholder="Name">
+              <input type="email" name="email" placeholder="Email">
+              <textarea name="text" placeholder="Text"></textarea>
+              <button type="submit">Отправить</button>
+          </form>
+      </div>
+      <div class="form-right">
+          <h2>Подпишитесь на наши новости</h2>
+          <form>
+              <input type="email" name="newsletter-email" placeholder="Email">
+              <button type="submit">Отправить</button>
+          </form>
+      </div>
+  </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <h1>AVENUE FLOWERS</h1>
+        </div>
+        <div class="footer-navigation">
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">О Нас</a></li>
+                <li><a href="#">Композиции</a></li>
+                <li><a href="#">Акции</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </div>
+        <div class="footer-icons">
+            <ul>
+                <li><a href="#"><img src="account.png" alt="Аккаунт"></a></li>
+                <li><a href="#"><img src="store.png" alt="Корзина"></a></li>
+                <li><a href="#"><img src="fav.png" alt="Избранные"></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<section class="final-footer">
+    <div class="final-footer-container">
+        <div class="left-info">
+            <p>© 2014 — 2024 | AVENUE | Все права защищены</p>
+            <p>Публичная оферта Талон ИП Лицензия Политика конфиденциальности</p>
+            <p>
+                ЛЕВЧЕНКО ОЛЬГА НИКОЛАЕВНА<br>
+                ИИН: 690502402093<br>
+                050010 г. Алматы, Медеуский район, ул. Радлова, д. 50/40 Алматы, Алматинская область 050010 Казахстан<br>
+                KZ876018861000218861 ДБ АО «Народный Банк Казахстана»<br>
+                БИК HSBKKZKX<br>
+                Номер телефона: +77770313905, 8 (777) 031 3905<br>
+                <a href="mailto:mail@pro-buket.kz" style="color: #FFF; text-decoration: underline;">mail@pro-buket.kz</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

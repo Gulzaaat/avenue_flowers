@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <title>Композиции</title>
+    <style>
+        /* Общий стиль */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+        }
+
+        /* Верхняя колонна */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #E4D3D3;
+            color: #000;
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .navigation ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navigation ul li {
+            margin: 0;
+        }
+
+        .navigation ul li a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            background-color: #E4D3D3;
+        }
+
+        .navigation ul li a:hover {
+            background-color: #FFF;
+            color: #000;
+        }
+
+        .icons img {
+            width: 24px;
+            height: 24px;
+            margin-left: 15px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .icons img:hover {
+            opacity: 0.7;
+        }
+
+        .breadcrumbs {
+            margin: 20px;
+            font-size: 18px;
+        }
+
+        .breadcrumbs a {
+            text-decoration: none;
+            color: #666;
+        }
+
+        .breadcrumbs span {
+            color: #aaa;
+        }
+
+        .divider {
+            margin: 10px 20px;
+            border-top: 1px solid #ccc;
+        }
+
+        .auth-bonus {
+            margin: 20px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .auth-bonus a {
+            text-decoration: underline;
+            color: #000;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .auth-bonus a:hover {
+            color: #444;
+        }
+        
+        .additional-container {
+            display: flex;  /* Используем flexbox для горизонтального расположения */
+            justify-content:center; /* Расположим блоки по краям */
+            gap: 5px;  /* Расстояние между блоками */
+        }
+
+        .additional-box, #your-order {
+            width: 48%;  /* Установим ширину блоков, чтобы они могли помещаться в строке */
+        }
+
+
+        .additional-box {
+            width: 400px;
+            margin: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            position: relative;
+            padding: 20px;
+            height: 200px;
+        }
+        .info {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .additional-box-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .additional-box img {
+            width: 120px; /* Увеличен размер изображения */
+            height: auto;
+            border-radius: 5px;
+            margin-right: 20px; /* Отступ между картинкой и текстом */
+        }
+
+        .additional-box-content p {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .additional-box-content small {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .checkbox-container input {
+            margin-right: 10px;
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Новый блок с данными о заказе */
+        .order-data-box {
+            width: 550px;
+            margin: 20px;
+            padding: 20px 20px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            background-color: #f9f9f9;
+            margin-left: 5px; /* Отступ слева */
+            width: calc(50% - 2.5px);
+        }
+
+        .order-data-box .info {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .order-data-box .button-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .order-data-box button {
+            flex: 1;
+            padding: 15px 0;
+            font-size: 18px;
+            font-weight: 500;
+            color: #fff;
+            background-color: #d3d3d3;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .order-data-box button:hover {
+            background-color: #b0b0b0;
+            transform: scale(1.05);
+        }
+
+        /* ваш заказ */
+        .order-container {
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .order-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .order-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .order-image {
+            width: 80px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .order-item-details {
+            flex: 1;
+        }
+
+        .order-item-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .order-item-price {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 10px 0;
+        }
+
+        .order-discount {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .promo-section,
+        .delivery-section {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 45%;
+        }
+
+        label {
+            font-size: 14px;
+            color: #666;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #8d8d8d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #6b6b6b;
+        }
+
+        .order-summary,
+        .order-total {
+            font-size: 16px;
+        }
+
+        .summary-price,
+        .total-price {
+            font-weight: bold;
+            float: right;
+        }
+
+        /* Скрытые блоки для ввода данных */
+        .hidden-form {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .hidden-form label {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .hidden-form input {
+            width: 100%; /* Поля для ввода занимают всю ширину */
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .hidden-form .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .pickup-info {
+            display: none;
+            font-size: 18px;
+            font-weight: 500;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        /* vach zakaz */
+    #your-order {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+    }
+    #order-items {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    #proceed-to-checkout {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #8d8d8d;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+    #proceed-to-checkout:hover {
+        background-color: #6b6b6b;
+    }
+
+
+        /* способ оплаты */
+        .conditionsItem {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            justify-content: center;
+            margin-left: 350px;
+            width:500px;
+        }
+
+        .conditions__title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .payment__button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .payment__button img {
+            max-width: 100%;
+            max-height: 40px;
+            object-fit: contain;
+        }
+
+        .payment__button.active {
+            border: 2px solid #4e4d4d;
+            background-color: #f0f0f0;
+        }
+
+        .payment__button:hover {
+            border-color: #4e4d4d;
+            background-color: #f8f8f8;
+        }
+
+        .submitForm {
+            width: 100%;
+            padding: 15px;
+            background-color: #4e4d4d;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .submitForm:hover {
+            background-color: #333;
+        }
+
+        /* end */
+       /* Колонка для Instagram */
+.instagram-column {
+    background-color: #E4D3D3;
+    height: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Контейнер для контента внутри колонки */
+.instagram-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 800px; /* Можете настроить ширину контейнера */
+    width: 100%;
+}
+
+/* Иконка Instagram */
+.instagram-icon {
+    width: 90px;
+    height: 90px;
+    margin-right: 20px; /* Отступ между иконкой и текстом */
+}
+
+/* Текст в колонке */
+.instagram-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #000;
+    flex-grow: 1; /* Раздвигает текст, чтобы кнопка была на другом конце */
+    margin: 0;
+}
+
+/* Кнопка подписки */
+.subscribe-btn {
+    background-color: #E14B4B;
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-btn:hover {
+    background-color: #A12C2C;
+}
+.final-footer {
+    background-color: #A8C1BC;
+    padding: 20px 40px;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+.final-footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.left-info p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.left-info a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.left-info a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <div class="logo">
+            <h1>AVENUE FLOWERS</h1>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="composition.html" class="active">Compositions</a></li>
+                <li><a href="#offers">Offers</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <a href="account.html"><img src="account.png" alt="Account"></a>
+            <a href="#cart"><img src="store.png" alt="Cart"></a>
+            <a href="#favorites"><img src="fav.png" alt="Favorites"></a>
+        </div>
+    </header>
+    <div class="breadcrumbs">
+        <a href="main.html">Home</a> <span>></span> <a href="composition.html">Compositions</a> <span>></span> ORDER PLACEMENT
+    </div>
+    <div class="divider"></div>
+    <div class="auth-bonus">
+        Log in and get 10% bonus on your next orders: <a href="account.html">Log In</a>
+    </div>
+
+    <div class="additional-container">
+        <div class="additional-box">
+            <br>
+            <div class="info">PEOPLE ALSO ADD TO ORDERS</div>
+            <div class="additional-box-content">
+                <img src="post.card.jpg" alt="Card">
+                <div>
+                    <p>Greeting Card</p>
+                    <small>Free</small>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="add-card">
+                        <label for="add-card">Add</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div id="your-order" class="order-container">
+            <h2 class="order-title">YOUR ORDER</h2>
+            <div class="order-item">
+                <img src="raffello.png" alt="Raffello Candy Set" class="order-image">
+                <div class="order-item-details">
+                    <p class="order-item-name">The Author's Bouquet "Spicy Aftertaste"</p>
+                    <p class="order-item-price">55,000 ₸</p>
+                </div>
+            </div>
+            <hr class="divider">
+            <div class="order-discount">
+                <div class="promo-section">
+                    <label for="promo-code">Enter Promo Code for Discount</label>
+                    <input type="text" id="promo-code" placeholder="Promo Code">
+                    <button id="apply-promo">OK</button>
+                </div>
+                <div class="delivery-section">
+                    <label for="delivery-fee">Delivery Fee &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" id="delivery-fee" placeholder="55,000 ₸">
+                    <button id="apply-delivery">OK</button>
+                </div>
+            </div>
+            <hr class="divider">
+            <div class="order-summary">
+                <p>The Author's Bouquet "Spicy Aftertaste"<span class="summary-price">55,000 ₸</span></p>
+                <p>Subtotal for Items: <span class="summary-price">55,000 ₸</span></p>
+                <p>Subtotal for Delivery: <span class="summary-price">2,000 ₸</span></p>
+            </div>
+            <hr class="divider">
+            <div class="order-total">
+                <p>TOTAL: <span class="total-price">57,000 ₸</span></p>
+            </div>
+        </div>  
+        <div class="order-data-box">
+            <br>
+            <div class="info">Order Details</div>
+            <div class="button-container">
+                <button id="courier-button">Courier</button>
+                <button id="pickup-button">Pickup</button>
+            </div>
+            
+            <!-- Hidden form for courier -->
+            <div id="courier-form" class="hidden-form">
+                <div class="section-title">Sender's Details</div>
+                <label for="sender-name">Name*</label>
+                <input type="text" id="sender-name" placeholder="Enter your name">
+                <label for="sender-phone">Phone*</label>
+                <input type="tel" id="sender-phone" placeholder="Enter your phone number">
+    
+                <div class="section-title">Recipient's Details</div>
+                <label for="receiver-name">Name*</label>
+                <input type="text" id="receiver-name" placeholder="Enter recipient's name">
+                <label for="receiver-phone">Recipient's Phone*</label>
+                <input type="tel" id="receiver-phone" placeholder="Enter recipient's phone number">
+            </div>
+    
+            <!-- Hidden info for pickup -->
+            <div id="pickup-info" class="pickup-info">
+                <div class="section-title">Pickup Address</div>
+                <p>Almaty, Satpayev St. 7A/1</p>
+                <div class="section-title">Sender's Details</div>
+                <label for="pickup-sender-name">Name*</label>
+                <input type="text" id="pickup-sender-name" placeholder="Enter your name">
+                <label for="pickup-sender-phone">Phone*</label>
+                <input type="tel" id="pickup-sender-phone" placeholder="Enter your phone number">
+            </div>
+        </div>      
+    </div>
+
+    <div class="conditionsItem">
+        <h2 class="conditions__title">
+            Payment Method
+        </h2>
+        <div class="payment-grid">
+            <button type="button" class="payment__button " data-pay-system-id="5">
+                <img src="ordeer/1.png" alt="EPAY (Halyk Bank)">
+            </button>
+            <button type="button" class="payment__button" data-pay-system-id="6">
+                <img src="ordeer/2.png" alt="Kaspi Pay">
+            </button>
+            <button type="button" class="payment__button" data-pay-system-id="7">
+                <img src="ordeer/3.png" alt="Freedom Pay">
+            </button>
+            <button type="button" class="payment__button" data-pay-system-id="8">
+                <img src="ordeer/4.png" alt="PayPal">
+            </button>
+            <button type="button" class="payment__button" data-pay-system-id="9">
+                <img src="ordeer/5.png" alt="Cash to Courier">
+            </button>
+            <button type="button" class="payment__button" data-pay-system-id="10">
+                <img src="ordeer/6.png" alt="Bank Transfer">
+            </button>
+        </div>
+        <button type="button" class="submit submitForm">Confirm Order</button>
+    </div>
+    
+
+    <section class="instagram-column">
+        <div class="instagram-container">
+            <img src="instagram.png" alt="Instagram" class="instagram-icon">
+            <p class="instagram-text">Freshest bouquets and exclusive offers!</p>
+            <a href="https://www.instagram.com/avenueflowerkz/" class="subscribe-btn">Subscribe</a>
+        </div>
+    </section>
+    <section class="final-footer">
+        <div class="final-footer-container">
+            <div class="left-info">
+                <p>© 2014 — 2024 | AVENUE | All rights reserved</p>
+                <p>Public Offer License Privacy Policy</p>
+                <p>
+                    LEVCHENKO OLGA NIKOLAEVNA<br>
+                    IIN: 690502402093<br>
+                    050010 Almaty, Medeu District, Radlov St. 50/40, Almaty, Almaty Region 050010 Kazakhstan<br>
+                    KZ876018861000218861 DB AO "People's Bank of Kazakhstan"<br>
+                    BIC HSBKKZKX<br>
+                    Phone: +77770313905, 8 (777) 031 3905<br>
+                    <a href="mailto:mail@pro-buket.kz" style="color: #FFF; text-decoration: underline;">mail@pro-buket.kz</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('courier-button').addEventListener('click', function() {
+            document.getElementById('courier-form').style.display = 'block';
+            document.getElementById('pickup-info').style.display = 'none';
+        });
+
+        document.getElementById('pickup-button').addEventListener('click', function() {
+            document.getElementById('pickup-info').style.display = 'block';
+            document.getElementById('courier-form').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

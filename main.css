@@ -1,0 +1,525 @@
+/* Общий фон */
+body {
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.form-container {
+    display: flex;
+    background: linear-gradient(to right, #ffffff, #ffecec);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+}
+
+.form-left, .form-right {
+    flex: 1;
+    padding: 40px;
+}
+
+.form-left {
+    background-color: #fff;
+}
+
+.form-right {
+    background-color: #ffecec;
+}
+
+.form-left h2, .form-right h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Верхняя колонна */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #E4D3D3; /* Цвет фона для шапки */
+    color: #000000;
+}
+
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    padding: 10px 20px;  /* Добавлен отступ вокруг текста */
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Стили для кнопок при наведении */
+.navigation ul li a:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Иконки */
+.icons img {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+/* Слайд-шоу */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    width: 100%;
+    height: auto;
+}
+
+/* Стиль для кнопок */
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+.slider-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Линия между слайд-шоу и бестселлерами */
+.slider-container + .bestsellers {
+    border-top: 2px solid #F5D0D0; /* Линия цвета светло-розового */
+    margin-top: 30px; /* Отступ сверху для разделения */
+}
+
+/* Секция "Наши бестселлеры" */
+.bestsellers {
+    text-align: center;
+    margin: 50px auto;
+    padding: 30px 20px;
+}
+
+.bestsellers-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Сетка карточек */
+.bestsellers-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Карточки букета */
+.bestseller-card {
+    width: 300px;
+    background-color: #FFECEC;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Приведение изображений к одинаковому размеру */
+.bestseller-card img {
+    width: 100%;
+    height: 200px; /* Устанавливаем фиксированную высоту для изображений */
+    object-fit: cover; /* Обеспечивает правильное масштабирование изображений */
+    border-radius: 10px;
+    margin-bottom: 15px; /* Отступ между изображением и текстом */
+}
+
+/* Название букета */
+.bestseller-card h3 {
+    font-size: 20px;
+    margin: 15px 0 10px;
+    color: #333;
+}
+
+/* Описание букета */
+.description {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+    text-align: justify;
+}
+
+/* Цена букета */
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+    text-align: left; /* Выравнивание цены по левому краю */
+}
+
+/* Действия внутри карточки */
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px; /* Добавлен отступ сверху */
+}
+
+/* Кнопка "Заказать" */
+.order-button {
+    background-color: #8D8D8D;
+    color: #FFF;
+    border: none;
+    border-radius: 10%;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.order-button:hover {
+    background-color: #6B6B6B;
+}
+
+/* Иконки для избранного и корзины */
+.action-icons a img {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.action-icons a img:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
+
+/* Раздел о основателе */
+.founder-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0;
+    padding: 20px;
+}
+
+/* Колонки с линиями */
+.founder-column {
+    display: flex;
+    flex-direction: row;
+    width: 48%;
+}
+
+/* Линия слева от каждой колонки */
+.line {
+    width: 5px;
+    background-color: #8D8D8D; /* Цвет линии */
+    margin-right: 20px;
+}
+
+/* Контент в колонке */
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.content h3 {
+    font-size: 24px;
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.content p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Раздел "Доставка и Оплата" */
+.delivery-payment {
+    background: linear-gradient(to bottom, #8D8D8D, #BBAFB6);
+    padding: 50px 20px;
+}
+
+.delivery-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.delivery-left {
+    width: 60%;
+    color: #FFF;
+    text-align: center;  /* Центрируем текст */
+}
+
+.delivery-left h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.line {
+    width: 50px;
+    height: 2px;
+    background-color: #FFF;
+    margin: 20px auto;  /* Центрируем линию */
+}
+
+.delivery-left p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.delivery-right {
+    width: 35%;
+}
+
+.delivery-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+/* Раздел "Наши Услуги" */
+.services {
+    background-color: #FFECEC;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.services-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Карточки услуг */
+.service-card {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 520px; /* Увеличенная высота карточки */
+    overflow: hidden; /* Скрываем текст, выходящий за рамки */
+}
+
+/* Изображения услуг */
+.service-image {
+    width: 100%;
+    height: 250px; /* Увеличиваем высоту изображения */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Заголовок услуги */
+.service-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 15px 0 10px;
+    text-align: center;
+}
+
+.service-description {
+    font-size: 14px;
+    color: #555;
+    text-align: justify;
+    line-height: 1.5;
+    max-height: 120px; /* Ограничиваем высоту описания */
+    overflow-y: auto; /* Добавляем прокрутку, если текста слишком много */
+    padding-right: 5px; /* Оставляем место для полосы прокрутки */
+}
+
+/* Сравнивание высоты карточек */
+.service-card {
+    height: 500px; /* Устанавливаем фиксированную высоту для выравнивания */
+}
+/* Футер */
+.footer {
+    background-color: #E4D3D3; /* Цвет фона футера */
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Чтобы элементы красиво переносились на мобильных устройствах */
+}
+
+.footer-logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #333;
+}
+
+.footer-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.footer-navigation ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.footer-navigation ul li a:hover {
+    color: #000;
+}
+
+.footer-icons ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.footer-icons ul li a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.footer-icons ul li a img:hover {
+    transform: scale(1.2);
+}
+/* Новая колонна с фоном #A8C1BC */
+.final-footer {
+    background-color: #A8C1BC;
+    padding: 20px 40px;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+.final-footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.left-info p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.left-info a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.left-info a:hover {
+    text-decoration: underline;
+}
+

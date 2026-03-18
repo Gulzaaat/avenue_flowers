@@ -1,0 +1,332 @@
+/* Общий стиль */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+}
+
+/* Верхняя колонна */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #E4D3D3;
+    color: #000;
+}
+
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin: 0;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.navigation ul li a:hover {
+    background-color: #FFF;
+}
+
+.icons img {
+    width: 24px;
+    height: 24px;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.icons img:hover {
+    opacity: 0.7;
+}
+
+/* Слайд-шоу */
+.slideshow {
+    max-width: 100%;
+    position: relative;
+    margin: 20px auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+.slides {
+    display: none;
+    width: 100%;
+}
+
+.slides img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.fade {
+    animation: fadeEffect 1.5s;
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Кнопки управления */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    border-radius: 3px;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Индикаторы */
+.dots-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+
+.dot:hover {
+    background-color: #555;
+}
+/* Линия с заголовком справа */
+.line-with-title {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+    padding: 0 20px;
+}
+
+.line {
+    flex: 1;
+    height: 3px;
+    background: linear-gradient(to right, #E4D3D3, #FFFFFF);
+    border-radius: 5px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    margin-left: 20px;
+    white-space: nowrap;
+    order: 2; /* Перемещает заголовок вправо */
+}
+/* Основной текст */
+.main-content {
+    font-family: 'Montserrat', sans-serif; /* Лёгкий и современный шрифт */
+    font-size: 16px; /* Удобный размер текста */
+    line-height: 1.8; /* Увеличенное межстрочное расстояние для удобства чтения */
+    color: #333; /* Насыщенный серый цвет для лучшей читаемости */
+    margin: 20px 20px; /* Отступы вокруг текста */
+}
+
+.main-content p {
+    margin-bottom: 20px; /* Расстояние между параграфами */
+    text-align: justify; /* Выравнивание текста по ширине */
+}
+/* Заголовок справа */
+.side-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    text-align: right; /* Заголовок выравнивается по правому краю */
+    margin: 30px 20px 0 0; /* Верхний и правый отступ */
+}
+/* Дополнительный текст */
+.additional-content {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    margin: 30px 20px;
+}
+
+.additional-content p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.additional-content ul {
+    list-style-type: disc;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+.additional-content ul li {
+    margin-bottom: 5px;
+}
+
+.additional-content a {
+    color: #E14B4B;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.additional-content a:hover {
+    color: #A12C2C;
+}
+/* Колонка для Instagram */
+.instagram-column {
+    background-color: #E4D3D3;
+    height: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Контейнер для контента внутри колонки */
+.instagram-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 800px; /* Можете настроить ширину контейнера */
+    width: 100%;
+}
+
+/* Иконка Instagram */
+.instagram-icon {
+    width: 90px;
+    height: 90px;
+    margin-right: 20px; /* Отступ между иконкой и текстом */
+}
+
+/* Текст в колонке */
+.instagram-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #000;
+    flex-grow: 1; /* Раздвигает текст, чтобы кнопка была на другом конце */
+    margin: 0;
+}
+
+/* Кнопка подписки */
+.subscribe-btn {
+    background-color: #E14B4B;
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-btn:hover {
+    background-color: #A12C2C;
+}
+.final-footer {
+    background-color: #A8C1BC;
+    padding: 20px 40px;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+.final-footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.left-info p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.left-info a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.left-info a:hover {
+    text-decoration: underline;
+}
+
+/* photo for background */
+
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #F9F9F9;
+    font-size: 14px;
+    color: #555;
+    gap: 5px;
+}
+
+.breadcrumb-link {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-link:hover {
+    color: #E14B4B;
+}
+
+.breadcrumb-separator {
+    color: #999;
+}
+
+.breadcrumb-current {
+    font-weight: bold;
+    color: #000;
+}
+

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <title>Композиции</title>
+    <link rel="stylesheet" href="composition.css">
+    <style>
+        .flower-button {
+            margin: 5px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .color-button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .color-button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .color-text {
+            text-align: center;
+            margin-top: 5px;
+            font-size: 12px;
+        }
+        .bestseller-card {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 200px;
+            text-align: center;
+            display: none; /* Скрываем все карточки по умолчанию */
+        }
+        .bestseller-card img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Верхняя колонна -->
+    <div class="top-bar">
+        <div class="logo">
+            <h1>AVENUE FLOWERS</h1>
+        </div>
+        <div class="navigation">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="#about">О Нас</a></li>
+                <li><a href="#compositions">Композиции</a></li>
+                <li><a href="#offers">Акции</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </div>
+        <div class="icons">
+            <a href="#account"><img src="account.png" alt="Аккаунт"></a>
+            <a href="#cart"><img src="store.png" alt="Корзина"></a>
+            <a href="#favorites"><img src="fav.png" alt="Избранные"></a>
+        </div>
+    </div>
+
+    <!-- Навигация после верхней колонны -->
+    <div class="breadcrumb">
+        <a href="main.html" class="breadcrumb-link">ГЛАВНАЯ</a>
+        <span class="breadcrumb-separator">></span>
+        <span class="breadcrumb-current">КОМПОЗИЦИИ</span>
+    </div>
+
+    <!-- Основной контент -->
+    <div class="buttons-container">
+        <!-- Кнопки цветов -->
+        <button class="flower-button" onclick="filterFlowers('Все')">Все</button>
+        <button class="flower-button" onclick="filterFlowers('VIP букеты')">VIP букеты</button>
+        <button class="flower-button" onclick="filterFlowers('Розы')">Розы</button>
+        <button class="flower-button" onclick="filterFlowers('Лилии')">Лилии</button>
+        <button class="flower-button" onclick="filterFlowers('Тюльпаны')">Тюльпаны</button>
+        <button class="flower-button" onclick="filterFlowers('Орхидеи')">Орхидеи</button>
+        <button class="flower-button" onclick="filterFlowers('Гвоздики')">Гвоздики</button>
+        <button class="flower-button" onclick="filterFlowers('Хризантемы')">Хризантемы</button>
+        <button class="flower-button" onclick="filterFlowers('Пионы')">Пионы</button>
+        <button class="flower-button" onclick="filterFlowers('Гортензии')">Гортензии</button>
+        <button class="flower-button" onclick="filterFlowers('Ирисы')">Ирисы</button>
+        <button class="flower-button" onclick="filterFlowers('Альстромерии')">Альстромерии</button>
+        <button class="flower-button" onclick="filterFlowers('Ромашки')">Ромашки</button>
+        <button class="flower-button" onclick="filterFlowers('Каллы')">Каллы</button>
+        <button class="flower-button" onclick="filterFlowers('Амариллисы')">Амариллисы</button>
+        <button class="flower-button" onclick="filterFlowers('Астры')">Астры</button>
+        <button class="flower-button" onclick="filterFlowers('Фрезии')">Фрезии</button>
+        <button class="flower-button" onclick="filterFlowers('Георгины')">Георгины</button>
+        <button class="flower-button" onclick="filterFlowers('Антуриумы')">Антуриумы</button>
+        <button class="flower-button" onclick="filterFlowers('Эустомы')">Эустомы</button>
+    </div>
+    <div class="filter-container">
+        <div class="filter-title">Цветы 4500-200000</div>
+        
+        <!-- Цвета -->
+        <div class="color-section">
+            <div class="color-label">ЦВЕТА:</div>
+            <div class="color-button-container">
+                <!-- Красный -->
+                <div class="color-button" style="background-color: #FF0000;" onclick="filterFlowersByColor('red')"></div>
+                <div class="color-text">Красный</div>
+    
+                <!-- Желтый -->
+                <div class="color-button" style="background-color: #FFFF00;" onclick="filterFlowersByColor('yellow')"></div>
+                <div class="color-text">Желтый</div>
+    
+                <!-- Синий -->
+                <div class="color-button" style="background-color: #4570e6;" onclick="filterFlowersByColor('blue')"></div>
+                <div class="color-text">Синий</div>
+    
+                <!-- Оранжевый -->
+                <div class="color-button" style="background-color: #fdd07c;" onclick="filterFlowersByColor('orange')"></div>
+                <div class="color-text">Оранжевый</div>
+    
+                <!-- Фиолетовый -->
+                <div class="color-button" style="background-color: #b96bb9;" onclick="filterFlowersByColor('purple')"></div>
+                <div class="color-text">Фиолетовый</div>
+    
+                <!-- Белый -->
+                <div class="color-button" style="background-color: #FFFFFF;" onclick="filterFlowersByColor('white')"></div>
+                <div class="color-text">Белый</div>
+    
+                <!-- Розовый -->
+                <div class="color-button" style="background-color: #FFC0CB;" onclick="filterFlowersByColor('pink')"></div>
+                <div class="color-text">Розовый</div>
+            </div>
+        </div>
+    </div>
+    
+    <section class="bestsellers">
+        <h2 class="bestsellers-heading">Наши бестселлеры</h2>
+        <div class="bestsellers-grid">
+          <!-- Карточка 1 (Розовый Пион) -->
+          <div class="bestseller-card" data-color="pink" data-price="10000">
+            <img src="bestseller1.png" alt="Розовый Пион">
+            <h3>Розовый Пион</h3>
+            <p class="description">
+              Этот пион с насыщенными розовыми лепестками создаёт атмосферу утончённости и романтики.
+            </p>
+            <p class="price">Цена: 10 000 KZT</p>
+            <div class="card-actions">
+              <button class="order-button">Заказать</button>
+              <div class="action-icons">
+                <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+                <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+              </div>
+            </div>
+          </div>
+          <div class="bestsellers-grid">
+            <!-- Карточка 2 (Розовый Пион) -->
+            <div class="bestseller-card" data-color="pink" data-price="10000">
+              <img src="bestseller2.png" alt="Розовый Пион">
+              <h3>Розовый Пион</h3>
+              <p class="description">
+                Этот пион с насыщенными розовыми лепестками создаёт атмосферу утончённости и романтики.
+              </p>
+              <p class="price">Цена: 10 000 KZT</p>
+              <div class="card-actions">
+                <button class="order-button">Заказать</button>
+                <div class="action-icons">
+                  <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+                  <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+                </div>
+              </div>
+            </div>
+            <div class="bestsellers-grid">
+                <!-- Карточка 3 (Розовый Пион) -->
+                <div class="bestseller-card" data-color="pink" data-price="10000">
+                  <img src="bestseller3.png" alt="Розовый Пион">
+                  <h3>Розовый Пион</h3>
+                  <p class="description">
+                    Этот пион с насыщенными розовыми лепестками создаёт атмосферу утончённости и романтики.
+                  </p>
+                  <p class="price">Цена: 10 000 KZT</p>
+                  <div class="card-actions">
+                    <button class="order-button">Заказать</button>
+                    <div class="action-icons">
+                      <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+                      <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+                    </div>
+                  </div>
+                </div>
+      
+          <!-- Карточка 4 (Красная Роза) -->
+          <div class="bestseller-card" data-color="red" data-price="40000">
+            <img src="red1.jpg" alt="Красная Роза">
+            <h3>Красная Роза</h3>
+            <p class="description">
+              Символ любви и страсти, эта красная роза не оставит равнодушным ни одного ценителя цветов.
+            </p>
+            <p class="price">Цена: 40 000 KZT</p>
+            <div class="card-actions">
+              <button class="order-button">Заказать</button>
+              <div class="action-icons">
+                <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+                <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+              </div>
+            </div>
+          </div>
+           <!-- Карточка 5 (Красная Роза) -->
+           <div class="bestseller-card" data-color="red" data-price="80000">
+            <img src="red2.jpg" alt="Красная Роза">
+            <h3>Красная Роза</h3>
+            <p class="description">
+              Символ любви и страсти, эта красная роза не оставит равнодушным ни одного ценителя цветов.
+            </p>
+            <p class="price">Цена: 80 000 KZT</p>
+            <div class="card-actions">
+              <button class="order-button">Заказать</button>
+              <div class="action-icons">
+                <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+                <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+              </div>
+            </div>
+          </div>
+           <!-- Карточка 6 (Красная Роза) -->
+           <div class="bestseller-card" data-color="red" data-price="80000">
+            <img src="red3.jpg" alt="Красная Роза">
+            <h3>Красная Роза</h3>
+            <p class="description">
+              Символ любви и страсти, эта красная роза не оставит равнодушным ни одного ценителя цветов.
+            </p>
+            <p class="price">Цена: 80 000 KZT</p>
+            <div class="card-actions">
+              <button class="order-button">Заказать</button>
+              <div class="action-icons">
+                <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+                <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Карточка 7 (Желтая Хризантема) -->
+          <div class="bestseller-card" data-color="yellow" data-price="12000">
+            <img src="yellow1.jpg" alt="Желтая Хризантема">
+            <h3>Желтая Хризантема</h3>
+            <p class="description">
+              Эти яркие цветы принесут солнечное настроение в любой день.
+            </p>
+            <p class="price">Цена: 12 000 KZT</p>
+            <div class="card-actions">
+              <button class="order-button">Заказать</button>
+              <div class="action-icons">
+                <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+                <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- Карточка 8 (Желтая Хризантема) -->
+      <div class="bestseller-card" data-color="yellow" data-price="12000">
+        <img src="yellow3.jpg" alt="Желтая Хризантема">
+        <h3>Желтая Хризантема</h3>
+        <p class="description">
+          Эти яркие цветы принесут солнечное настроение в любой день.
+        </p>
+        <p class="price">Цена: 12 000 KZT</p>
+        <div class="card-actions">
+          <button class="order-button">Заказать</button>
+          <div class="action-icons">
+            <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+            <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+          </div>
+        </div>
+      </div>
+      <!-- Карточка 9 (ВИП) -->
+      <div class="bestseller-card" data-color="pink" data-price="104000">
+        <img src="vip3.png" alt="Тандем">
+        <h3>Тандем</h3>
+        <p class="description">
+            Эти яркие цветы принесут солнечное настроение в любой день.
+        </p>
+        <p class="price">Цена: 104 000 KZT</p>
+        <div class="card-actions">
+            <button class="order-button">Заказать</button>
+            <div class="action-icons">
+                <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+                <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+            </div>
+        </div>
+    </div>
+      <!-- Карточка 10 (ВИП) -->
+      <div class="bestseller-card" data-color="pink" data-price="156000">
+        <img src="vip2.png" alt="Розовое Сияние">
+        <h3>Розовое Сияние</h3>
+        <p class="description">
+          Эти яркие цветы принесут солнечное настроение в любой день.
+        </p>
+        <p class="price">Цена: 156 000 KZT</p>
+        <div class="card-actions">
+          <button class="order-button">Заказать</button>
+          <div class="action-icons">
+            <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+            <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+          </div>
+        </div>
+      </div>
+      <!-- Карточка 11 (VIP) -->
+      <div class="bestseller-card" data-color="pink" data-price="146000">
+        <img src="vip1.png" alt="Тепло Вдохновения">
+        <h3>Тепло Вдохновения</h3>
+        <p class="description">
+          Эти яркие цветы принесут солнечное настроение в любой день.
+        </p>
+        <p class="price">Цена: 146 000 KZT</p>
+        <div class="card-actions">
+          <button class="order-button">Заказать</button>
+          <div class="action-icons">
+            <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+            <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+          </div>
+        </div>
+      </div>
+      <!-- Карточка 12 (Желтая Хризантема) -->
+      <div class="bestseller-card" data-color="pink" data-price="143000">
+        <img src="vip4.png" alt="Цветное Облако">
+        <h3>Цветное Облако</h3>
+        <p class="description">
+          Эти яркие цветы принесут солнечное настроение в любой день.
+        </p>
+        <p class="price">Цена: 143 000 KZT</p>
+        <div class="card-actions">
+          <button class="order-button">Заказать</button>
+          <div class="action-icons">
+            <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+            <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+          </div>
+        </div>
+      </div>
+
+    <!-- Карточка 13 (Желтая Хризантема) -->
+  <div class="bestseller-card" data-color="yellow" data-price="12000">
+    <img src="yellow2.jpg" alt="Желтая Хризантема">
+    <h3>Желтая Хризантема</h3>
+    <p class="description">
+      Эти яркие цветы принесут солнечное настроение в любой день.
+    </p>
+    <p class="price">Цена: 12 000 KZT</p>
+    <div class="card-actions">
+      <button class="order-button">Заказать</button>
+      <div class="action-icons">
+        <a href="#"><img src="fav.png" alt="Добавить в избранное"></a>
+        <a href="#"><img src="store.png" alt="Добавить в корзину"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script>
+        // Фильтрация по цвету
+        function filterFlowers(color) {
+            const allCards = document.querySelectorAll('.bestseller-card');
+            allCards.forEach(card => {
+                if (color === 'Все') {
+                    card.style.display = 'block';
+                } else if (card.dataset.color === color) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Фильтрация по цвету кнопок
+        function filterFlowersByColor(color) {
+            const allCards = document.querySelectorAll('.bestseller-card');
+            allCards.forEach(card => {
+                if (color === 'Все') {
+                    card.style.display = 'block';
+                } else if (card.dataset.color === color) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

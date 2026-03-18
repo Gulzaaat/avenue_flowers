@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #E4D3D3;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #A8C1BC;
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #A8C1BC;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #8aafb0;
+        }
+
+        .back-btn {
+            background-color: #fff;
+            color: #A8C1BC;
+            border: 1px solid #A8C1BC;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .back-btn:hover {
+            background-color: #f0f0f0;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            display: none;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Регистрация</h2>
+
+        <div class="input-group">
+            <input type="text" id="first-name" placeholder="Имя" required>
+        </div>
+        <div class="input-group">
+            <input type="text" id="last-name" placeholder="Фамилия" required>
+        </div>
+        <div class="input-group">
+            <input type="email" id="email" placeholder="Электронная почта" required>
+        </div>
+        <div class="input-group">
+            <input type="password" id="password" placeholder="Пароль" required>
+        </div>
+
+        <div class="error-message" id="error-message">
+            Пожалуйста, заполните все поля правильно. Почта должна содержать '@', имя и фамилия должны состоять только из букв.
+        </div>
+
+        <input type="submit" value="Создать аккаунт" onclick="validateForm()">
+
+        <button class="back-btn" onclick="goBack()">Назад</button>
+
+        <div class="footer">
+            <p>Уже есть аккаунт? <a href="#" onclick="showLoginForm()">Войти</a></p>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const nameRegex = /^[A-Za-zА-Яа-яЁё]+$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!firstName || !lastName || !email || !password) {
+                showError('Пожалуйста, заполните все поля.');
+                return;
+            }
+
+            if (!nameRegex.test(firstName) || !nameRegex.test(lastName)) {
+                showError('Имя и фамилия должны состоять только из букв.');
+                return;
+            }
+
+            if (!emailRegex.test(email)) {
+                showError('Почта должна содержать символ "@" и быть правильного формата.');
+                return;
+            }
+
+            document.getElementById('error-message').style.display = 'none';
+            alert("Аккаунт создан!");
+        }
+
+        function showError(message) {
+            document.getElementById('error-message').style.display = 'block';
+            document.getElementById('error-message').innerText = message;
+        }
+
+        function showLoginForm() {
+            alert('Введите почту и пароль для входа.');
+        }
+
+        function goBack() {
+            window.location.href = "main.html";  // замените на URL главной страницы
+        }
+    </script>
+
+</body>
+</html>
+
