@@ -5,7 +5,7 @@
 Check out the promotional video below:
 
 <video width="600" controls>
-  <source src="Flower Avenue video.mp4" type="video/mp4">
+  <source src="flower_avenue_video.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
