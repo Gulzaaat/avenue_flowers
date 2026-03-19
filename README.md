@@ -4,10 +4,7 @@
 
 Check out the promotional video below:
 
-<video width="600" controls>
-  <source src="flower_avenue_video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+https://github.com/user-attachments/assets/23e9cc01-e801-45c9-bb67-fda816e04cae
 
 
 [View the presentation on Canva](https://www.canva.com/design/DAGaUogLXAc/R7edrFBXdwNArEHUKBkJFw/edit?utm_content=DAGaUogLXAc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
