@@ -2,6 +2,14 @@
 
 **Flower Avenue** is an online floral platform based in Almaty, offering a wide variety of fresh-cut flowers, houseplants, soft toys, sweets, and unique gifts sourced from around the world. We are committed to providing high-quality products and top-tier service, with exclusive flowers imported from Ecuador, Italy, the Netherlands, Kenya, Colombia, Israel, and France.
 
+Check out the promotional video below:
+
+<video width="600" controls>
+  <source src="https://github.com/Gulzaaat/avenue_flowers/blob/3be52a550c1f7d295a7ab9cd17791967d5c1d5b1/Flower%20Avenue%20video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
 [View the presentation on Canva](https://www.canva.com/design/DAGaUogLXAc/R7edrFBXdwNArEHUKBkJFw/edit?utm_content=DAGaUogLXAc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ## Features:
